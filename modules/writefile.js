@@ -17,18 +17,18 @@ const elementScript = require('./elementScript');
 
 const fileInfo = [
   {
-    name : `"index.html"`,
-    content : `HTMLTemplate(styleTag("red","blue","yellow"), elementScript ,pureslide)`
+    name : "index.html",
+    content : HTMLTemplate(styleTag("red","blue","yellow"), elementScript ,pureslide)
   },
   {
     name : "sub.html",
-    content : `HTMLTemplate(styleTag("purple","gray","green"), elementScript ,pureslide)`
+    content : HTMLTemplate(styleTag("purple","gray","green"), elementScript ,pureslide)
   } 
 ];
 
 for(let i =0; i<fileInfo.length; i++){
   
-  fs.writeFile(fileInfo.name[i], fileInfo.content[i], (err) => {
+  fs.writeFile(fileInfo[i].name, fileInfo[i].content, (err) => {
     if(err) {
       console.error("에러발생");
     } else {

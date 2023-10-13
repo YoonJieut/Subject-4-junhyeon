@@ -20,7 +20,7 @@ const server = http.createServer((req, res)=>{
     })
   }
   if(req.url === "/sub"){
-    fs.readFile('test.html',(err, data)=>{
+    fs.readFile('sub.html',(err, data)=>{
       if(err){
         console.error('파일 읽기 에러');
       } else{
