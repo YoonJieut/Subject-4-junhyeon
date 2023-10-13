@@ -35,6 +35,7 @@
 <body>
   <script>
 
+// body 세팅
 const body = document.body;
 console.dir(body);
 body.style.width = "100vw";
@@ -42,24 +43,26 @@ body.style.height = "100vh";
 body.style.backgroundColor = "cyan";
 body.className = "flex-center";
 
+// window 작성
 let windowDiv = document.createElement('div');
 windowDiv.setAttribute("id", "window")
+windowDiv.style.outline = "1px solid white"
+windowDiv.style.position = "relative";
+windowDiv.style.width = "700px";
+windowDiv.style.height = "400px";
 body.prepend(windowDiv);
 
-
-
+// ulTag 작성 및 세팅
 let ulTag = document.createElement('ul');
 ulTag.setAttribute("id", "slideUl");
 windowDiv.prepend(ulTag);
+const slideUl = document.getElementById('slideUl');
 ulTag.style.width  = "700px"
-ulTag.style.height  = "400px"
 ulTag.style.outline  = "2px solid red"
-ulTag.style.position = "absoluete"
+ulTag.style.position = "absolute"
 ulTag.style.top = "0"
 ulTag.style.left = "0"
-
-const slideUl = document.getElementById('slideUl');
-
+console.log(slideUl);
 
 
 
@@ -81,10 +84,7 @@ li.forEach(element => {
 });
 
 
-
-
-
-
+//움직이는 로직
 let topMove= (height) => {
   let temp = 0;
   let topMoving = setInterval(()=>{
@@ -103,17 +103,19 @@ let appnedSomething = ()=>{
   slideUl.appendChild(remove1st);
   slideUl.style.top = 0;
 }
+topMove(400);
 
-//최종 조립
-setTimeout(()=>{
-  // 시작 전 타임아웃
-    setInterval(()=>{
-      topMove(400);
-      setTimeout(()=>{
-        appnedSomething();
-      },500);
-    }, 5000)
-  },5000)
+
+// //최종 조립
+// setTimeout(()=>{
+//   // 시작 전 타임아웃
+//     setInterval(()=>{
+//       topMove(400);
+//       setTimeout(()=>{
+//         appnedSomething();
+//       },500);
+//     }, 5000)
+//   },5000)
 
   </script>
 </body>
