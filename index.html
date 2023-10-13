@@ -14,29 +14,26 @@
       justify-content: center;
       align-items: center;
     }
+    h1 {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+    }
     </style>
     <title>Test</title>
 </head>
 <body>
+  <h1>안녕ㅎ사에ㅛ</h1>
   <script>
 
 const body = document.body;
 // console.dir(body);
 body.style.width = "100vw";
 body.style.height = "100vh";
-body.style.backgroundColor = "cyan";
+// body.style.backgroundColor = "cyan";
 body.className = "flex-center";
 
-// tagMaker 함수 선언
-const tagMaker = (parent, tagName)=>{
-  let tag = document.createElement(tagName)
-  parent.appendChild(tag);
-}
-
-// div 생성
-tagMaker(body, "div")
-const windowDiv = body.children[0];
-console.log(windowDiv);
 
 
 
