@@ -16,8 +16,10 @@ const fs = require('fs');
 // console.log(fileList);
 // console.log(fileList.length);
 
-fs.writeFile(`../index.html`, template, (err) => {
+fs.writeFile(`index.html`, template, (err) => {
   if(err) {
     console.error("에러발생");
+  } else {
+    console.log('바르게 작동됩니다.');
   }
 });
