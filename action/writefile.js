@@ -1,8 +1,8 @@
 const fs = require('fs');
-const HTMLTemplate = require('./HTMLTemplate');
-const pureslide = require('./pureslide');
-const styleTag = require('./styleTag');
-const elementScript = require('./elementScript');
+const HTMLTemplate = require('../modules/HTMLTemplate');
+const pureslide = require('../modules/pureslide');
+const styleTag = require('../modules/styleTag');
+const elementScript = require('../modules/elementScript');
 
 // styleTag : 3개 매개변수, 각각 슬라이드의 배경색, 문자열입력
 //* Html 템플릿 : 3개의 매개변수

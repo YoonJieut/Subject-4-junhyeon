@@ -10,6 +10,7 @@ const HTMLTemplate = (styleTag, elementScript,logics)=>{
   <title>Test</title>
 </head>
 <body>
+  <h1>/sub 또는 /를 주소창에 입력해보세요</h1>
   <script>
     ${elementScript}
     ${logics}

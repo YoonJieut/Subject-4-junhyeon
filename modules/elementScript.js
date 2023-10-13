@@ -38,10 +38,14 @@ const li = document.querySelectorAll("li");
 console.log(li);
 
 // li 스타일링
-li.forEach(element => {
+li.forEach((element, index) => {
   element.style.listStyle = "none";
-  element.style.width  = "700px"
-  element.style.height  = "400px"
+  element.style.width  = "700px";
+  element.style.height  = "400px";
+  element.textContent  = index+1+"번 슬라이드";
+  element.style.fontSize = "32px";
+  element.style.lineHeight = "400px";
+  element.style.textAlign = "center";
 });
 `
 module.exports = elementScript;
