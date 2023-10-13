@@ -48,6 +48,24 @@ Html 템플릿 : 3개의 매개변수
 
 
 ###### action/writefile.js
-실행 파일입니다. 매개변수의 조건에 맞춰서 fileInfo
+실행 파일입니다. 매개변수의 조건에 맞춰서 fileInfo에 데이터들을 작성해주면 됩니다.
 
+
+###### module/HTMLTemplate.js
+텍스트 타입을 리턴하는 함수 파일입니다. html의 기본틀을 담고 있습니다.
+매개변수는 style태그가 담기는 styleTag, 동적 스타일 스크립트가 담기는 elementScript, 슬라이드의 로직이 담기는 logics의 매개변수를 담고 있습니다.
+(styleTag, elementScript, logics - 3가지)
+
+
+###### module/elementScript.js
+텍스트 타입의 파일입니다. 동적으로 스타일링한 스크립트를 담고 있습니다.
+
+
+###### module/pureslide.js
+텍스트 타입의 파일입니다. 슬라이드의 로직을 담고 있습니다.
+
+
+###### module/styleTag.js
+텍스트 타입을 리턴하는 함수입니다. html의 style태그 내용을 담고 있습니다.
+매개변수는 fir, sec, thr의 슬라이드들의 색을 교환하는 매개변수를 담고 있습니다.
 
