@@ -1,6 +1,6 @@
 // console.log('hi');
 const http = require('http');
-
+const fs = require('fs');
 
 const server = http.createServer((req, res)=>{
   // console.log(req.method) // GET
@@ -10,7 +10,14 @@ const server = http.createServer((req, res)=>{
   }
   if(req.url === "/"){
     res.writeHead(200, {"Content-Type" : "text/html; charset=utf-8"});
-    res.end("<h1>잘 작동중</h1>")
+    
+    fs.readFile('index.html',(err, data)=>{
+      if(err){
+        console.error('파일 읽기 에러');
+      } else{
+        res.end(data);
+      }
+    })
   }
 });
 
