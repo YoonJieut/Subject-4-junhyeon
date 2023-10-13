@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<style>
+*{
+  padding: 0;
+  margin :0;
+  box-sizing: border-box;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+#slide0{
+  background-color: purple;
+}
+#slide1{
+  background-color: gray;
+}
+#slide2{
+  background-color: green;
+}
+</style>
+
+  <title>Test</title>
+</head>
+<body>
+  <h1>/sub 또는 /를 주소창에 입력해보세요</h1>
+  <script>
+    
+// body 세팅
+const body = document.body;
+console.dir(body);
+body.style.width = "100vw";
+body.style.height = "100vh";
+body.className = "flex-center";
+
+// window 작성
+let windowDiv = document.createElement('div');
+windowDiv.setAttribute("id", "window")
+windowDiv.style.position = "relative";
+windowDiv.style.width = "700px";
+windowDiv.style.height = "400px";
+windowDiv.style.overflow = "hidden";
+body.prepend(windowDiv);
+
+// ulTag 작성 및 세팅
+let ulTag = document.createElement('ul');
+ulTag.setAttribute("id", "slideUl");
+windowDiv.prepend(ulTag);
+const slideUl = document.getElementById('slideUl');
+ulTag.style.width  = "700px"
+ulTag.style.position = "absolute"
+ulTag.style.top = "0"
+ulTag.style.left = "0"
+console.log(slideUl);
+
+
+
+// li 태그 3개 생성
+for(i=0; i<3; i++){
+  let someTag = document.createElement('li');
+  let appendC = ulTag.appendChild(someTag);
+  appendC.setAttribute("id", `slide${i}`);
+}
+const li = document.querySelectorAll("li");
+console.log(li);
+
+// li 스타일링
+li.forEach((element, index) => {
+  element.style.listStyle = "none";
+  element.style.width  = "700px";
+  element.style.height  = "400px";
+  element.textContent  = index+1+"번 슬라이드";
+  element.style.fontSize = "32px";
+  element.style.lineHeight = "400px";
+  element.style.textAlign = "center";
+});
+
+    
+//움직이는 로직
+let topMove= (height) => {
+  let temp = 0;
+  let topMoving = setInterval(()=>{
+    if(temp > -height) {
+      temp = temp -5;
+      slideUl.style.top = temp+"px";
+    } else {
+      clearInterval(topMoving)
+    }
+  }, 0.5)
+}
+
+// ! 첫 요소 삭제 및 뒤로 이동
+let appnedSomething = ()=>{
+  let remove1st = slideUl.removeChild(slideUl.children[0]);
+  slideUl.appendChild(remove1st);
+  slideUl.style.top = 0;
+}
+
+
+//최종 조립
+setInterval(()=>{
+  topMove(400);
+  setTimeout(()=>{
+    appnedSomething();
+  },500);
+}, 5000)
+
+  </script>
+</body>
+</html>
