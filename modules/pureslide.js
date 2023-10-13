@@ -1,7 +1,7 @@
 
 // ! 첫 요소 삭제 및 뒤로 이동
 // ! 단 slideUl을 선언
-
+const pureSlide = `
 let topMove= (height) => {
   let temp = 0;
   let topMoving = setInterval(()=>{
@@ -31,5 +31,7 @@ setTimeout(()=>{
       },500);
     }, 5000)
   },5000)
+`
+module.exports = pureSlide;
 
-module.exports = slideLogic;
+// console.log(pureSlide);
