@@ -23,15 +23,12 @@ let appnedSomething = ()=>{
 
 
 //최종 조립
-setTimeout(()=>{
-  // 시작 전 타임아웃
-    setInterval(()=>{
-      topMove(400);
-      setTimeout(()=>{
-        appnedSomething();
-      },500);
-    }, 5000)
-  },5000)
+setInterval(()=>{
+  topMove(400);
+  setTimeout(()=>{
+    appnedSomething();
+  },500);
+}, 5000)
 `
 module.exports = pureSlide;
 
