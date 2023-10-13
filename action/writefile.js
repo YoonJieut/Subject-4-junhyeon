@@ -10,6 +10,9 @@ const elementScript = require('../modules/elementScript');
 //* 2. elmentScript문자열 
 //* 3. pureslide 문자열
 
+// 단, 색을 지정할 땐, 오타가 허용되지 않는다.
+
+
 // ? 아하 이게 콜백지옥이구나
 // ? 작성법이 어렵고, if문으로 타입 선언도 하지 않아서 안정성이 매우 떨어진다. 더 나은 개선점은??
 
