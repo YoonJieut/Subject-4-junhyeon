@@ -1,6 +1,7 @@
 const pureSlide = require('./pureslide');
 
-const HTMLTemplate = `<!DOCTYPE html>
+const HTMLTemplate = (logics)=>{
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,12 +11,13 @@ const HTMLTemplate = `<!DOCTYPE html>
 <body>
   <h1>나는 슬라이드</h1>
   <script>
-    ${pureSlide}
+    ${logics}
   </script>
 </body>
 </html>
 `;
-
-// console.log(HTMLTemplate);
+}
+console.log(pureSlide);
+console.log(HTMLTemplate(pureSlide));
 
 module.exports = HTMLTemplate;
