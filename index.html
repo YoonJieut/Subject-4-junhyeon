@@ -3,19 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test</title>
+  <style>
+    *{
+      padding: 0;
+      margin :0;
+      box-sizing: border-box;
+    }
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    </style>
+    <title>Test</title>
 </head>
 <body>
-  <h1>나는 슬라이드</h1>
-
   <script>
-    
+
 const body = document.body;
-console.dir(body);
+// console.dir(body);
+body.style.width = "100vw";
+body.style.height = "100vh";
+body.style.backgroundColor = "cyan";
+body.className = "flex-center";
+
+// tagMaker 함수 선언
+const tagMaker = (parent, tagName)=>{
+  let tag = document.createElement(tagName)
+  parent.appendChild(tag);
+}
+
+// div 생성
+tagMaker(body, "div")
+const windowDiv = body.children[0];
+console.log(windowDiv);
+
+
 
 let ulTag = document.createElement('ul');
 ulTag.setAttribute("id", "slideUl");
 body.append(ulTag);
+ulTag.style.width  = "700px"
+ulTag.style.height  = "400px"
+ulTag.style.outline  = "1px solid black"
+ulTag.style.position = "absoluete"
+
+
+
+
+// li 태그 3개 생성
+for(i=0; i<3; i++){
+  let someTag = document.createElement('li');
+  let appendC = ulTag.appendChild(someTag);
+  appendC.setAttribute("id", `slide${i}`);
+}
+const li = document.querySelectorAll("li");
+console.log(li);
+
+// li 스타일링
+li.forEach(element => {
+  element.style.listStyle = "none";
+  element.style.width  = "700px"
+  element.style.height  = "400px"
+  element.style.outline  = "1px solid black"
+});
+
+
+
 
 const slideUl = document.getElementById('slideUl');
 
