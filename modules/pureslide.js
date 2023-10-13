@@ -1,8 +1,6 @@
 
 // ! 첫 요소 삭제 및 뒤로 이동
 const pureSlide = `
-const slideUl = document.getElementById('slideUl');
-
 let topMove= (height) => {
   let temp = 0;
   let topMoving = setInterval(()=>{

@@ -36,18 +36,21 @@
   <script>
 
 const body = document.body;
-// console.dir(body);
+console.dir(body);
 body.style.width = "100vw";
 body.style.height = "100vh";
 body.style.backgroundColor = "cyan";
 body.className = "flex-center";
 
+let windowDiv = document.createElement('div');
+windowDiv.setAttribute("id", "window")
+body.prepend(windowDiv);
 
 
 
 let ulTag = document.createElement('ul');
 ulTag.setAttribute("id", "slideUl");
-body.prepend(ulTag);
+windowDiv.prepend(ulTag);
 ulTag.style.width  = "700px"
 ulTag.style.height  = "400px"
 ulTag.style.outline  = "2px solid red"
@@ -55,6 +58,7 @@ ulTag.style.position = "absoluete"
 ulTag.style.top = "0"
 ulTag.style.left = "0"
 
+const slideUl = document.getElementById('slideUl');
 
 
 
@@ -79,7 +83,7 @@ li.forEach(element => {
 
 
 
-const slideUl = document.getElementById('slideUl');
+
 
 let topMove= (height) => {
   let temp = 0;
