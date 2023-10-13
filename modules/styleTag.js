@@ -27,3 +27,4 @@ h1 {
 }
 </style>
 `;
+module.exports = styleTag;
