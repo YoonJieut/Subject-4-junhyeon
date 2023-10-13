@@ -1,8 +1,8 @@
 const fs = require('fs');
 const HTMLTemplate = require('./HTMLTemplate');
+const pureslide = require('./pureslide');
 
-
-fs.writeFile(`index.html`, HTMLTemplate, (err) => {
+fs.writeFile(`index.html`, HTMLTemplate(pureslide), (err) => {
   if(err) {
     console.error("에러발생");
   } else {

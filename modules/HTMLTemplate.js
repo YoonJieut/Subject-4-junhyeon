@@ -1,4 +1,4 @@
-const pureSlide = require('./pureslide');
+// const pureSlide = require('./pureslide');
 
 const HTMLTemplate = (logics)=>{
   return `<!DOCTYPE html>
@@ -17,7 +17,7 @@ const HTMLTemplate = (logics)=>{
 </html>
 `;
 }
-console.log(pureSlide);
-console.log(HTMLTemplate(pureSlide));
+// console.log(pureSlide);
+// console.log(HTMLTemplate(pureSlide));
 
 module.exports = HTMLTemplate;
