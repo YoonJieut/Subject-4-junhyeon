@@ -1,6 +1,7 @@
 
 // ! 첫 요소 삭제 및 뒤로 이동
 const pureSlide = `
+//움직이는 로직
 let topMove= (height) => {
   let temp = 0;
   let topMoving = setInterval(()=>{
@@ -19,6 +20,7 @@ let appnedSomething = ()=>{
   slideUl.appendChild(remove1st);
   slideUl.style.top = 0;
 }
+
 
 //최종 조립
 setTimeout(()=>{
