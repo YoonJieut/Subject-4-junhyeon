@@ -20,18 +20,26 @@
       left: 0;
       top: 0;
     }
+    #slide0{
+      background-color: blueviolet;
+    }
+    #slide1{
+      background-color: brown;
+    }
+    #slide2{
+      background-color: burlywood;
+    }
     </style>
     <title>Test</title>
 </head>
 <body>
-  <h1>안녕ㅎ사에ㅛ</h1>
   <script>
 
 const body = document.body;
 // console.dir(body);
 body.style.width = "100vw";
 body.style.height = "100vh";
-// body.style.backgroundColor = "cyan";
+body.style.backgroundColor = "cyan";
 body.className = "flex-center";
 
 
@@ -39,11 +47,14 @@ body.className = "flex-center";
 
 let ulTag = document.createElement('ul');
 ulTag.setAttribute("id", "slideUl");
-body.append(ulTag);
+body.prepend(ulTag);
 ulTag.style.width  = "700px"
 ulTag.style.height  = "400px"
-ulTag.style.outline  = "1px solid black"
+ulTag.style.outline  = "2px solid red"
 ulTag.style.position = "absoluete"
+ulTag.style.top = "0"
+ulTag.style.left = "0"
+
 
 
 
