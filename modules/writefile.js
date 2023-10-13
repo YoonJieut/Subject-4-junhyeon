@@ -2,11 +2,12 @@ const fs = require('fs');
 const HTMLTemplate = require('./HTMLTemplate');
 const pureslide = require('./pureslide');
 const styleTag = require('./styleTag');
+const elementScript = require('./elementScript');
 
 
 
 const fileName = ["index.html", "sub.html"];
-fs.writeFile(`index.html`, HTMLTemplate(styleTag, pureslide), (err) => {
+fs.writeFile(`index.html`, HTMLTemplate(styleTag, elementScript ,pureslide), (err) => {
   if(err) {
     console.error("에러발생");
   } else {

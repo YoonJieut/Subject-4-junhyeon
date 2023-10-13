@@ -1,6 +1,6 @@
-// const pureSlide = require('./pureslide');
 
-const HTMLTemplate = (styleTag, logics)=>{
+
+const HTMLTemplate = (styleTag, elementScript,logics)=>{
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +10,8 @@ const HTMLTemplate = (styleTag, logics)=>{
   <title>Test</title>
 </head>
 <body>
-  <h1>나는 슬라이드</h1>
   <script>
+    ${elementScript}
     ${logics}
   </script>
 </body>

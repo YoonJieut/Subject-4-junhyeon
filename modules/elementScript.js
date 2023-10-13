@@ -1,4 +1,3 @@
-
 const elementScript =`
 // body 세팅
 const body = document.body;

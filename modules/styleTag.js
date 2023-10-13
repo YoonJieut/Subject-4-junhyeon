@@ -1,4 +1,10 @@
-const styleTag =`
+// 함수로 배경 바꾸기
+// ** 첫 번째 매개변수는 slide 1번의 색
+// ** 두 번째 매개변수는 slide 2번의 색
+// ** 세 번째 매개변수는 slide 3번의 색
+
+const styleTag = (fir,sec,thr)=>{
+return`
 <style>
 *{
   padding: 0;
@@ -17,14 +23,16 @@ h1 {
   top: 0;
 }
 #slide0{
-  background-color: blueviolet;
+  background-color: ${fir};
 }
 #slide1{
-  background-color: brown;
+  background-color: ${sec};
 }
 #slide2{
-  background-color: burlywood;
+  background-color: ${thr};
 }
 </style>
-`;
+`
+};
+// console.log(styleTag("red","blue","yellow"))
 module.exports = styleTag;
