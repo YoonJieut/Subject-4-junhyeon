@@ -1,11 +1,10 @@
-console.log('hi');
-
+// console.log('hi');
 const http = require('http');
 
-const server = http.createServer((req, res)=>{
-  console.log(req.method)
-  console.log(req.url)
 
+const server = http.createServer((req, res)=>{
+  // console.log(req.method) // GET
+  // console.log(req.url) // "/""
   if(req.method !== "GET") {
     throw new Error("해당 서버는 GET요청만 받습니다!!")
   }
