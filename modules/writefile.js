@@ -10,14 +10,32 @@ const elementScript = require('./elementScript');
 //* 2. elmentScript문자열 
 //* 3. pureslide 문자열
 
+// ? 아하 이게 콜백지옥이구나
+// ? 작성법이 어렵고, if문으로 타입 선언도 하지 않아서 안정성이 매우 떨어진다. 더 나은 개선점은??
 
-const fileName = ["index.html", "sub.html"];
-fs.writeFile(`index.html`, HTMLTemplate(styleTag("red","blue","yellow"), elementScript ,pureslide), (err) => {
-  if(err) {
-    console.error("에러발생");
-  } else {
-    console.log('바르게 작동됩니다.');
-  }
-});
 
+
+const fileInfo = [
+  {
+    name : `"index.html"`,
+    content : `HTMLTemplate(styleTag("red","blue","yellow"), elementScript ,pureslide)`
+  },
+  {
+    name : "sub.html",
+    content : `HTMLTemplate(styleTag("purple","gray","green"), elementScript ,pureslide)`
+  } 
+];
+
+for(let i =0; i<fileInfo.length; i++){
+  
+  fs.writeFile(fileInfo.name[i], fileInfo.content[i], (err) => {
+    if(err) {
+      console.error("에러발생");
+    } else {
+      console.log('바르게 작동됩니다.');
+    }
+  });
+};
+
+console.log(fileInfo.length);
 // 파일을 생성하는.. 실행만 하는 파일인 writefile.js
